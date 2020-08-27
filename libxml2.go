@@ -70,8 +70,8 @@ func parseTag(Tag string) ([]string, bool) {
 
 func makeNodeDomTreeRecursion(doc *dom.Document, parentNode types.Element, i int, tagSlice []string, payLoad string) (types.Element, error) {
 	// вызывающая функция обязана проверить len(tagSlice) > 0
-	println("makeNodeDomTreeRecursion start")
-	println("payload " + payLoad)
+	// println("makeNodeDomTreeRecursion start")
+	// println("payload " + payLoad)
 	if i == len(tagSlice) - 1 {
 		newNode, err := doc.CreateElement(tagSlice[i])
 		if err != nil {
@@ -89,7 +89,7 @@ func makeNodeDomTreeRecursion(doc *dom.Document, parentNode types.Element, i int
 
 func reflectStructRecursion(val reflect.Value, doc *dom.Document, parentNode *types.Element) error {
 	var valueField string
-	println("reflectStructRecursion start")
+	// println("reflectStructRecursion start")
 
 	for i := 0; i < val.NumField(); i++ {
 		typeField := val.Type().Field(i)

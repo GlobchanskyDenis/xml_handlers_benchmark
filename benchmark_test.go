@@ -31,3 +31,10 @@ func BenchmarkStreamUnmarshal(b *testing.B) {
 		_, _ = UnmarshalStream(xmlSrc)
 	}
 }
+
+func BenchmarkLibxml2Marshal(b *testing.B) {
+	for i:=0; i<b.N; i++ {
+		U := InitUsersStruct(0)
+		_, _ = MarshalLibXML2_tester(U)
+	}
+}
